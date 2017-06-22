@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/usecases">
+        <file>BrowseTalks.qml</file>
+    </qresource>
+</RCC>

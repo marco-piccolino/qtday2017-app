@@ -3,4 +3,5 @@ TEMPLATE = subdirs
 SUBDIRS += \
     usecases \
     entities \
-    repos
+    repos \
+    mobileclient

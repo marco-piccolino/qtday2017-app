@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/repos">
+        <file>TalksLocal3.qml</file>
+    </qresource>
+</RCC>

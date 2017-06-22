@@ -10,6 +10,7 @@ Object {
     }
     Connections { // normally use promise-like constructs
         target: Entities.talks
+        ignoreUnknownSignals: true
         onWasRead:
             if (Entities.talks.count > 0) {success({});}
             else {failure({});}
