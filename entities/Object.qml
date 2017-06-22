@@ -1,5 +1,5 @@
-import QtQuick 2.0
+import QtQml 2.2
 
-Item {
-
+QtObject {
+    default property var data
 }

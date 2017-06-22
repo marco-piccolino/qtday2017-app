@@ -1,2 +1,3 @@
 DISTFILES += \
-    $$PWD/Talks.qml
+    $$PWD/Talks.qml \
+    $$PWD/Object.qml
