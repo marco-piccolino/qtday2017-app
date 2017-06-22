@@ -3,22 +3,24 @@ import QtTest 1.0
 import "."
 
 TestCase {
-    name: "browse_talks"
+    name: "browse_talks" // test name; useful for output and AutoTest plugin
 
-    property var browse_talks
+    property var usecases
     Component {
-        id: browseTalksC
-        BrowseTalks {}
+        id: usecasesC
+        QtObject {
+            property var browse_talks: BrowseTalks {} // usecase implementation reference
+        }
     }
 
-    function initTestCase() {Steps.testcase = this}
+    function initTestCase() {Steps.testcase = this} // pass testcase env. to Steps
     function cleanupTestCase() {Steps.testcase = null}
-
-    function init() {
-        browse_talks = browseTalksC.createObject()
+    //---
+    function init() { // called before each scenario
+        usecases = usecasesC.createObject(this)
     }
     function cleanup() {
-        browse_talks.destroy()
+        usecases.destroy()
     }
 
     function test_browse_talks__one_or_more() {
