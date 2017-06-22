@@ -1,6 +1,7 @@
 import QtQml 2.2
 import QtTest 1.0
 import "."
+import "../entities" as E
 
 TestCase {
     name: "browse_talks" // test name; useful for output and AutoTest plugin
@@ -8,8 +9,16 @@ TestCase {
     property var usecases
     Component {
         id: usecasesC
-        QtObject {
-            property var browse_talks: BrowseTalks {} // usecase implementation reference
+        QtObject {  // usecase implementation references
+            property var browse_talks: BrowseTalks {}
+        }
+    }
+
+    property var entities
+    Component {
+        id: entitiesC
+        QtObject { // entity implementation references
+            property var talks: E.Talks {}
         }
     }
 
@@ -17,10 +26,12 @@ TestCase {
     function cleanupTestCase() {Steps.testcase = null}
     //---
     function init() { // called before each scenario
-        usecases = usecasesC.createObject(this)
+        entities = entitiesC.createObject(this);
+        usecases = usecasesC.createObject(this);
     }
     function cleanup() {
-        usecases.destroy()
+        usecases.destroy();
+        entities.destroy();
     }
 
     function test_browse_talks__one_or_more() {

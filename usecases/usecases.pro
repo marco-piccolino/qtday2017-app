@@ -10,3 +10,4 @@ DISTFILES += \
     qmldir
 
 include(usecases.pri)
+include(../entities/entities.pri)
