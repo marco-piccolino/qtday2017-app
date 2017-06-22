@@ -1,0 +1,8 @@
+TEMPLATE = app
+TARGET = tst_usecases
+CONFIG += warn_on qmltestcase
+SOURCES += \
+    tst_usecases.cpp
+
+DISTFILES += \
+    tst_browse_talks.qml
