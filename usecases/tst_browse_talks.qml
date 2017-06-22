@@ -13,6 +13,11 @@ TestCase {
         id: usecasesC
         QtObject {  // usecase implementation references
             property var browse_talks: BrowseTalks {}
+
+            property var browse_talks_success_spy: SignalSpy {
+                target: usecases.browse_talks
+                signalName: "success"
+            }
         }
     }
 
@@ -22,6 +27,7 @@ TestCase {
         QtObject { // entity implementation references
             id: entities
             property var talks: E.Talks {
+                Component.onCompleted: E.Entities.talks = this
                 repo: R.TalksLocal3 {}
             }
             property var talksDataReadSpy: SignalSpy {
