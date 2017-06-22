@@ -2,4 +2,5 @@ TEMPLATE = subdirs
 
 SUBDIRS += \
     usecases \
-    entities
+    entities \
+    repos

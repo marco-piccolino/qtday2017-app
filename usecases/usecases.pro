@@ -11,3 +11,4 @@ DISTFILES += \
 
 include(usecases.pri)
 include(../entities/entities.pri)
+include(../repos/repos.pri)

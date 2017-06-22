@@ -1,7 +1,9 @@
+// tst_browse_talks.qml
 import QtQml 2.2
 import QtTest 1.0
 import "."
 import "../entities" as E
+import "../repos" as R
 
 TestCase {
     name: "browse_talks" // test name; useful for output and AutoTest plugin
@@ -18,7 +20,14 @@ TestCase {
     Component {
         id: entitiesC
         QtObject { // entity implementation references
-            property var talks: E.Talks {}
+            id: entities
+            property var talks: E.Talks {
+                repo: R.TalksLocal3 {}
+            }
+            property var talksDataReadSpy: SignalSpy {
+                target: entities.talks.repo
+                signalName: "dataRead"
+            }
         }
     }
 
