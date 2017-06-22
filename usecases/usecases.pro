@@ -5,4 +5,8 @@ SOURCES += \
     tst_usecases.cpp
 
 DISTFILES += \
-    tst_browse_talks.qml
+    tst_browse_talks.qml \
+    Steps.qml \
+    qmldir
+
+include(usecases.pri)
