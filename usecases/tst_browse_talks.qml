@@ -59,4 +59,8 @@ TestCase {
         // And
         Steps.the_list_of_talks_cointains_at_least_one_talk()
     }
+    //---
+    function test_browse_talks__none() {
+        skip()
+    }
 }
